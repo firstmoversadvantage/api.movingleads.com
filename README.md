@@ -1,5 +1,5 @@
 Moving Leads API
-============
+================
 
 The Moving Leads API is implemented as vanilla XML over HTTP using all four verbs (GET/POST/PUT/DELETE). Every resource, like User, CustomerAccount, or ListOrder, has their own URL and are manipulated in isolation. In other words, we've tried to make the API follow the REST principles as much as we can.
 
@@ -13,7 +13,7 @@ API Endpoints
 * [ListOrders]
 * [WatchList]
 
-uthentication
+Authentication
 --------------
 
 When you're using the API, it's always through an existing user in Moving Leads. There's no special API user. So when you use the API as "david", you get to see and work with what "david" is allowed to. Authenticating is done with an authentication token, which you'll find on the "My Info" screen in Moving Leads (click the "Reveal authentication token for feeds/API" link).
