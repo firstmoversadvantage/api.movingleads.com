@@ -5,6 +5,17 @@ For the full XML representation of users, [check out the data reference](https:/
 
 The account API is currently just for reading, not writing. Any authenticated user has access.
 
+<!-- 
+      customer_accounts GET    /customer_accounts(.:format)           customer_accounts#index
+                        POST   /customer_accounts(.:format)           customer_accounts#create
+   new_customer_account GET    /customer_accounts/new(.:format)       customer_accounts#new
+  edit_customer_account GET    /customer_accounts/:id/edit(.:format)  customer_accounts#edit
+       customer_account GET    /customer_accounts/:id(.:format)       customer_accounts#show
+                        PUT    /customer_accounts/:id(.:format)       customer_accounts#update
+                        DELETE /customer_accounts/:id(.:format)       customer_accounts#destroy
+ -->
+
+
 Get account
 -----------
 
