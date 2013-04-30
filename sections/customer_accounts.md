@@ -19,7 +19,7 @@ The account API is currently just for reading, not writing. Any authenticated us
 Get account
 -----------
 
-* `GET /customer_account.xml` returns info about the current user’s Highrise account.
+* `GET /customer_account.xml` returns info about the current user’s customer account.
 
 This endpoint includes:
 
