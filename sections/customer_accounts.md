@@ -1,7 +1,7 @@
 CustomerAccounts
 ================
 
-For the full XML representation of users, [check out the data reference](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/data_reference.md#customer_account).
+For the full XML representation of customer_accounts, [check out the data reference](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/data_reference.md#customer_account).
 
 The account API is currently just for reading, not writing. Any authenticated user has access.
 
