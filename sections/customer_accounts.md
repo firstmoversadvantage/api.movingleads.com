@@ -28,9 +28,15 @@ This endpoint includes:
 * first name, last name
 * salutation
 * contact title
-* Street address, city, State, zip
+* Street address, city, State, zip, country
 * a telephone number, and an alternate telephone number
 * email address
+* industry
+* brand affiliation
+* user agreement status
+* accounting ID
+* billing information
+* web address
 * purchase order
 
 
