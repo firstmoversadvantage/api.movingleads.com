@@ -1,8 +1,6 @@
 CustomerAccounts
 ================
 
-For the full XML representation of customer_accounts, [check out the data reference](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/data_reference.md#customer_account).
-
 <!-- 
       customer_accounts GET    /customer_accounts(.:format)           customer_accounts#index
                         POST   /customer_accounts(.:format)           customer_accounts#create
