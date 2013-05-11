@@ -46,7 +46,7 @@ This endpoint includes:
   <company_name>Your Company</company_name>
   <first_name>John</first_name>
   <last_name>Doe</last_name>
-  <salutation>Hi</salutation>
+  <salutation>Mr</salutation>
   <contact_title>CEO</contact_title>
   <street_address>Your Address</street_address>
   <city>Your City</city>
@@ -56,8 +56,19 @@ This endpoint includes:
   <telephone_1>Your Primary Phone Number</telephone_1>
   <telephone_2>Your Secondary Phone Number</telephone_2>
   <industry>Your Industry</industry>
-  ...
-  
+  <brand_affiliation>Your Brand Affiliation</brand_affiliation>
+  <user_agreement_signed_on> Date You Signed User Agreement</user_agreement_signed_on>
+  <accounting_id>Your ID for our Accounting System</accounting_id>
+  <billing_first_name>John</billing_first_name>
+  <billing_last_name>Doe</billing_last_name>
+  <billing_street_address>Billing Street Address</billing_street_address>
+  <billing_city>Billing City</billing_city>
+  <billing_state>Billing State</billing_state>
+  <billing_zip>Billing ZIP Code</billing_zip>
+  <billing_country>Billing Country</billing_country>
+  <telephone_fax>Billing Address Fax Number</telephone_fax>
+  <web_address>Your Website</web_address>
+  <purchase_order>Purchase Order</purchase_order>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
 </account>
@@ -68,14 +79,6 @@ Get customer_accounts
 -------------
 
 * `GET /customer_accounts.xml` returns a collection of customer_accounts that are visible to the authenticated user.
-* `GET /customer_accounts.xml?n=#{offset}` returns a collection of customer_accounts offset by the given amount.
-* `GET /customer_accounts.xml?tag_id=#{tag_id}` returns a collection of customer_accounts that have a specific tag.
-* `GET /customer_accounts.xml?since=20070425154546` returns a collection of customer_accounts that have been created or updated since the time passed in through the URL. 
-The list is paginated using offsets. If 500 elements are returned (the page limit), use `?n=500` to check for the next 500 and so on.
-
-When filtering with the `since` parameter, the collection is ordered by ascending `updated_at` (oldest to newest). The `since` parameter should be in the `yyyymmddhhmmss` format and in UTC.
-
-If customer_accounts under a tag are requsted and no customer_accounts with that tag exist, an empty `<customer_accounts>` container will be returned.
 
 **Response:**
 
@@ -98,8 +101,6 @@ Create customer_account
 
 The XML for the new customer_account is returned on a successful request with the timestamps recorded and ids for the contact data associated.
 
-By default, a new customer_account is assumed to be visible to `Everyone`. You can also chose to make the customer_account only visible to the creator using `Owner` as the value for the `visible-to` tag. Or `NamedGroup` and pass in a `group-id` tag too.
-
 As always, the URL for the newly-created customer_account is passed back in the `Location` header.
 
 **Request:**
@@ -109,7 +110,7 @@ As always, the URL for the newly-created customer_account is passed back in the 
   <company_name>Your Company</company_name>
   <first_name>John</first_name>
   <last_name>Doe</last_name>
-  <salutation>Hi</salutation>
+  <salutation>Mr</salutation>
   <contact_title>CEO</contact_title>
   <street_address>Your Address</street_address>
   <city>Your City</city>
@@ -119,8 +120,19 @@ As always, the URL for the newly-created customer_account is passed back in the 
   <telephone_1>Your Primary Phone Number</telephone_1>
   <telephone_2>Your Secondary Phone Number</telephone_2>
   <industry>Your Industry</industry>
-  ...
-  
+  <brand_affiliation>Your Brand Affiliation</brand_affiliation>
+  <user_agreement_signed_on> Date You Signed User Agreement</user_agreement_signed_on>
+  <accounting_id>Your ID for our Accounting System</accounting_id>
+  <billing_first_name>John</billing_first_name>
+  <billing_last_name>Doe</billing_last_name>
+  <billing_street_address>Billing Street Address</billing_street_address>
+  <billing_city>Billing City</billing_city>
+  <billing_state>Billing State</billing_state>
+  <billing_zip>Billing ZIP Code</billing_zip>
+  <billing_country>Billing Country</billing_country>
+  <telephone_fax>Billing Address Fax Number</telephone_fax>
+  <web_address>Your Website</web_address>
+  <purchase_order>Purchase Order</purchase_order>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
 </account>
@@ -140,10 +152,7 @@ Update customer_account
 --------------
 
 * `PUT /customer_accounts/#{id}.xml` updates an existing customer_account with new details from the submitted XML.
-
-Contact data and Subject data that include an id will be updated, data that doesn’t will be assumed to be new and created from scratch. To remove a piece of data, prefix its id with a minus sign (e.g. `-1`).
-
-Use `?reload=true` to get XML of the successfully updated customer_account.
+<!-- Use `?reload=true` to get XML of the successfully updated customer_account. -->
 
 **Request:**
 
@@ -153,7 +162,7 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
   <company_name>Your Company</company_name>
   <first_name>John</first_name>
   <last_name>Doe</last_name>
-  <salutation>Hi</salutation>
+  <salutation>Mr</salutation>
   <contact_title>CEO</contact_title>
   <street_address>Your Address</street_address>
   <city>Your City</city>
@@ -163,8 +172,19 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
   <telephone_1>Your Primary Phone Number</telephone_1>
   <telephone_2>Your Secondary Phone Number</telephone_2>
   <industry>Your Industry</industry>
-  ...
-  
+  <brand_affiliation>Your Brand Affiliation</brand_affiliation>
+  <user_agreement_signed_on> Date You Signed User Agreement</user_agreement_signed_on>
+  <accounting_id>Your ID for our Accounting System</accounting_id>
+  <billing_first_name>John</billing_first_name>
+  <billing_last_name>Doe</billing_last_name>
+  <billing_street_address>Billing Street Address</billing_street_address>
+  <billing_city>Billing City</billing_city>
+  <billing_state>Billing State</billing_state>
+  <billing_zip>Billing ZIP Code</billing_zip>
+  <billing_country>Billing Country</billing_country>
+  <telephone_fax>Billing Address Fax Number</telephone_fax>
+  <web_address>Your Website</web_address>
+  <purchase_order>Purchase Order</purchase_order>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
 </account>

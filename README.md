@@ -8,8 +8,8 @@ You can explore the view part of the API (everything that's fetched with GET) th
 
 API Endpoints
 -------------
-* [Users](https://github.com/PATH/TO/DOCUMENTATION)
-* [CustomerAccounts]
+* [Users]
+* [CustomerAccounts](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/customer_accounts.md)
 * [ListOrders]
 * [WatchList]
 
