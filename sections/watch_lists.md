@@ -17,54 +17,50 @@ edit_customer_account_list_order_watch_list GET
 WatchList
 ================
 
-For the full XML representation of watch_lists, [check out the data reference](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/data_reference.md#watch_list).
-
-The account API is currently just for reading, not writing. Any authenticated user has access.
-
-
 Get watch_list
 -----------
 
-* `GET /watch_list.xml` returns info about the current user’s customer account.
+* `GET /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists.xml` returns info about the specified watchlist.
 
 This endpoint includes:
 
-* id
-* company name
-* first name, last name
-* salutation
-* contact title
-* Street address, city, State, zip
-* a telephone number, and an alternate telephone number
-* email address
-* purchase order
+* watchlist ID
+* list order id
+* full name
+* street address
+* city
+* state
+* 9-digit zip code
+* dpbc
+* unit type
+* unit number
+* your account
+* filter before
+* sold on date
+* timestamps (created_at, updated_at)
 
 
 **Response:**
 
 ``` xml
-<account>
-  <id type="integer">1</id>
-  <company_name>Your Company</company_name>
-  <first_name>John</first_name>
-  <last_name>Doe</last_name>
-  <salutation>Hi</salutation>
-  <contact_title>CEO</contact_title>
-  <street_address>Your Address</street_address>
-  <city>Your City</city>
-  <state>Your State</state>
-  <zip>Your ZIP Code</zip>
-  <country>Your ZIP Code</country>
-  <telephone_1>Your Primary Phone Number</telephone_1>
-  <telephone_2>Your Secondary Phone Number</telephone_2>
-  <industry>Your Industry</industry>
-  ...
-  
+<watch_list>
+  <id>1</id>
+  <list_order_id>5</list_order_id>
+  <full_name> John Doe</full_name>
+  <street_address> 123 Example St.</street_address>
+  <city> Exampleville</city>
+  <state>CO</state>
+  <zip_9> 80303-4444</zip_9>
+  <dpbc>DPBC</dpbc>
+  <unit_type> unit type</unit_type>
+  <unit_number> unit number</unit_number>
+  <your_account> account</your_account>
+  <filter_before> filter before</filter_before>
+  <sold_on> sold on date</sold_on>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
-</account>
+</watch_list>
 ```
-
 
 Get watch_lists
 -------------
