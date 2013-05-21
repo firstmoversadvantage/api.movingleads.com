@@ -15,7 +15,7 @@ CustomerAccounts
 Get customer_account
 -----------
 
-* `GET /customer_account.xml` returns info about the current user’s customer account.
+* `GET /customer_account/#{new-customer_account-id}.xml` returns info about the specified customer account.
 
 This endpoint includes:
 
@@ -150,7 +150,8 @@ Update customer_account
 --------------
 
 * `PUT /customer_accounts/#{id}.xml` updates an existing customer_account with new details from the submitted XML.
-<!-- Use `?reload=true` to get XML of the successfully updated customer_account. -->
+
+Use `?reload=true` to get XML of the successfully updated customer_account.
 
 **Request:**
 
