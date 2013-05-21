@@ -65,15 +65,7 @@ This endpoint includes:
 Get watch_lists
 -------------
 
-* `GET /watch_lists.xml` returns a collection of watch_lists that are visible to the authenticated user.
-* `GET /watch_lists.xml?n=#{offset}` returns a collection of watch_lists offset by the given amount.
-* `GET /watch_lists.xml?tag_id=#{tag_id}` returns a collection of watch_lists that have a specific tag.
-* `GET /watch_lists.xml?since=20070425154546` returns a collection of watch_lists that have been created or updated since the time passed in through the URL. 
-The list is paginated using offsets. If 500 elements are returned (the page limit), use `?n=500` to check for the next 500 and so on.
-
-When filtering with the `since` parameter, the collection is ordered by ascending `updated_at` (oldest to newest). The `since` parameter should be in the `yyyymmddhhmmss` format and in UTC.
-
-If watch_lists under a tag are requsted and no watch_lists with that tag exist, an empty `<watch_lists>` container will be returned.
+* `GET /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists.xml` returns a collection of watch_lists that are visible to the authenticated user.
 
 **Response:**
 
