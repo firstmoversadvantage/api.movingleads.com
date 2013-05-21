@@ -84,42 +84,35 @@ Get watch_lists
 Create watch_list
 --------------
 
-* `POST /watch_lists.xml` creates a new watch_list with the currently authenticated user as the author.
+* `POST /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists.xml` creates a new watch_list with the currently authenticated user as the author.
 
 The XML for the new watch_list is returned on a successful request with the timestamps recorded and ids for the contact data associated.
-
-By default, a new watch_list is assumed to be visible to `Everyone`. You can also chose to make the watch_list only visible to the creator using `Owner` as the value for the `visible-to` tag. Or `NamedGroup` and pass in a `group-id` tag too.
 
 As always, the URL for the newly-created watch_list is passed back in the `Location` header.
 
 **Request:**
 
 ``` xml
-<account>
-  <company_name>Your Company</company_name>
-  <first_name>John</first_name>
-  <last_name>Doe</last_name>
-  <salutation>Hi</salutation>
-  <contact_title>CEO</contact_title>
-  <street_address>Your Address</street_address>
-  <city>Your City</city>
-  <state>Your State</state>
-  <zip>Your ZIP Code</zip>
-  <country>Your ZIP Code</country>
-  <telephone_1>Your Primary Phone Number</telephone_1>
-  <telephone_2>Your Secondary Phone Number</telephone_2>
-  <industry>Your Industry</industry>
-  ...
-  
-  <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
-  <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
-</account>
+<watch_list>
+  <list_order_id>5</list_order_id>
+  <full_name> John Doe</full_name>
+  <street_address> 123 Example St.</street_address>
+  <city> Exampleville</city>
+  <state>CO</state>
+  <zip_9> 80303-4444</zip_9>
+  <dpbc>DPBC</dpbc>
+  <unit_type> unit type</unit_type>
+  <unit_number> unit number</unit_number>
+  <your_account> account</your_account>
+  <filter_before> filter before</filter_before>
+  <sold_on> sold on date</sold_on>
+</watch_list>
 ```
 
 **Response:**
 
     Status: 201 Created
-    Location: https://example.firstmoversadvantage.com/watch_lists/#{new-watch_list-id}.xml
+    Location: https://example.firstmoversadvantage.com/customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{new-watch_list-id}.xml
 
     <watch_list>
       ...
