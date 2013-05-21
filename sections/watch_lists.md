@@ -122,35 +122,28 @@ As always, the URL for the newly-created watch_list is passed back in the `Locat
 Update watch_list
 --------------
 
-* `PUT /watch_lists/#{id}.xml` updates an existing watch_list with new details from the submitted XML.
-
-Contact data and Subject data that include an id will be updated, data that doesn’t will be assumed to be new and created from scratch. To remove a piece of data, prefix its id with a minus sign (e.g. `-1`).
+* `PUT /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{watch_list-id}.xml` updates an existing watch_list with new details from the submitted XML.
 
 Use `?reload=true` to get XML of the successfully updated watch_list.
 
 **Request:**
 
 ``` xml
-<account>
-  <id type="integer">1</id>
-  <company_name>Your Company</company_name>
-  <first_name>John</first_name>
-  <last_name>Doe</last_name>
-  <salutation>Hi</salutation>
-  <contact_title>CEO</contact_title>
-  <street_address>Your Address</street_address>
-  <city>Your City</city>
-  <state>Your State</state>
-  <zip>Your ZIP Code</zip>
-  <country>Your ZIP Code</country>
-  <telephone_1>Your Primary Phone Number</telephone_1>
-  <telephone_2>Your Secondary Phone Number</telephone_2>
-  <industry>Your Industry</industry>
-  ...
-  
-  <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
-  <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
-</account>
+<watch_list>
+  <id>1</id>
+  <list_order_id>5</list_order_id>
+  <full_name> John Doe</full_name>
+  <street_address> 123 Example St.</street_address>
+  <city> Exampleville</city>
+  <state>CO</state>
+  <zip_9> 80303-4444</zip_9>
+  <dpbc>DPBC</dpbc>
+  <unit_type> unit type</unit_type>
+  <unit_number> unit number</unit_number>
+  <your_account> account</your_account>
+  <filter_before> filter before</filter_before>
+  <sold_on> sold on date</sold_on>
+</watch_list>
 ```
 
 **Response:**
@@ -161,7 +154,7 @@ Use `?reload=true` to get XML of the successfully updated watch_list.
 Destroy watch_list
 ---------------
 
-* `DELETE /watch_lists/#{id}.xml` destroys the watch_list at the referenced URL.
+* `DELETE /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{watch_list-id}.xml` destroys the watch_list at the referenced URL.
 
 **Response:**
 
