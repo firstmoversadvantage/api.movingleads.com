@@ -15,7 +15,7 @@ CustomerAccounts
 Get customer_account
 -----------
 
-* `GET /customer_account/#{new-customer_account-id}.xml` returns info about the specified customer account.
+* `GET /customer_accounts/#{customer_account-id}.xml` returns info about the specified customer account.
 
 This endpoint includes:
 
@@ -39,7 +39,7 @@ This endpoint includes:
 **Response:**
 
 ``` xml
-<account>
+<customer_account>
   <id type="integer">1</id>
   <company_name>Your Company</company_name>
   <first_name>John</first_name>
@@ -69,7 +69,7 @@ This endpoint includes:
   <purchase_order>Purchase Order</purchase_order>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
-</account>
+</customer_account>
 ```
 
 
@@ -104,7 +104,7 @@ As always, the URL for the newly-created customer_account is passed back in the 
 **Request:**
 
 ``` xml
-<account>
+<customer_account>
   <company_name>Your Company</company_name>
   <first_name>John</first_name>
   <last_name>Doe</last_name>
@@ -133,13 +133,13 @@ As always, the URL for the newly-created customer_account is passed back in the 
   <purchase_order>Purchase Order</purchase_order>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
-</account>
+</customer_account>
 ```
 
 **Response:**
 
     Status: 201 Created
-    Location: https://example.firstmoversadvantage.com/customer_accounts/#{new-customer_account-id}.xml
+    Location: https://example.firstmoversadvantage.com/customer_accounts/#{customer_account-id}.xml
 
     <customer_account>
       ...
@@ -156,7 +156,7 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
 **Request:**
 
 ``` xml
-<account>
+<customer_account>
   <id type="integer">1</id>
   <company_name>Your Company</company_name>
   <first_name>John</first_name>
@@ -186,7 +186,7 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
   <purchase_order>Purchase Order</purchase_order>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
-</account>
+</customer_account>
 ```
 
 **Response:**
@@ -197,7 +197,7 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
 Destroy customer_account
 ---------------
 
-* `DELETE /customer_accounts/#{id}.xml` destroys the customer_account at the referenced URL.
+* `DELETE /customer_accounts/#{customer_account-id}.xml` destroys the customer_account at the referenced URL.
 
 **Response:**
 
