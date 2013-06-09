@@ -20,7 +20,7 @@ WatchList
 Get watch_list
 -----------
 
-* `GET /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists.xml` returns info about the specified watchlist.
+* `GET /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{watch_list-id}.xml` returns info about the specified watchlist.
 
 This endpoint includes:
 
