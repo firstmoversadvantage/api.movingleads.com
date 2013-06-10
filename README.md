@@ -3,7 +3,7 @@ Moving Leads API
 
 The Moving Leads API is implemented as vanilla XML over HTTP using all four verbs (GET/POST/PUT/DELETE). Every resource, like User, CustomerAccount, or ListOrder, has their own URL and are manipulated in isolation. In other words, we've tried to make the API follow the REST principles as much as we can.
 
-You can explore the view part of the API (everything that's fetched with GET) through a regular browser. Using Firefox for this is particularly nice as it has a good, simple XML renderer (unlike Safari which just strips the tags and dumps the content). Pretty much any URL in Moving Leads can be viewed in its XML form by adding the .xml extension. So `/people/4` becomes `/people/4.xml` if you want to see the XML version.
+You can explore the view part of the API (everything that's fetched with GET) through a regular browser. Using Firefox for this is particularly nice as it has a good, simple XML renderer (unlike Safari which just strips the tags and dumps the content). Pretty much any URL in Moving Leads can be viewed in its XML form by adding the .xml extension. So `/customer_accounts/4` becomes `/customer_accounts/4.xml` if you want to see the XML version.
 
 
 API Endpoints
@@ -22,7 +22,7 @@ When using the authentication token, you don't need a separate password. But sin
 
 Here's an example using the authentication token and a dummy password through curl:
 
-    curl -u 605b32dd:X https://customers.movingleads.com/people/1.xml
+    curl -u 605b32dd:X https://customers.movingleads.com/customer_accounts/1.xml
 
 Remember that anyone who has your authentication token can see and change everything you have access to. So you want to guard that as well as you guard your username and password. If you come to fear that it has been compromised, you can regenerate it at any time from the "My Info" screen in Moving Leads.
 
@@ -36,9 +36,9 @@ The Moving Leads API has two category of actions for reading: Get one, or get ma
 
 Here's a few examples of reading with curl:
 
-    curl -u 605b32dd:X https://customers.movingleads.com/kases/5.xml
+    curl -u 605b32dd:X https://customers.movingleads.com/customer_accounts/4/list_orders/5.xml
 
-    curl -u 605b32dd:X https://customers.movingleads.com/people/27/notes.xml
+    curl -u 605b32dd:X https://customers.movingleads.com/customer_accounts/27/customer_accounts/2/list_orders/3/watch_lists.xml
 
 If the read is successful, you'll get an XML response back along with the status code `200 OK`.
 
@@ -53,26 +53,26 @@ When you're creating and updating resources, you'll be sending XML into Moving L
 Here's a few examples creating new resources, first with the XML inline, second referencing the XML from a file:
 
     curl -u 605b32dd:X -H 'Content-Type: application/xml' \
-    -d '<kase><name>Important matters</name></kase>' https://customers.movingleads.com/kases.xml
+    -d '<kase><name>Important matters</name></kase>' https://customers.movingleads.com/customer_accounts/4/list_orders.xml
 
     curl -u 605b32dd:X -H 'Content-Type: application/xml' \
-    -d @note.xml https://customers.movingleads.com/people/5/notes.xml
+    -d @note.xml https://customers.movingleads.com/customer_accounts/5/customer_accounts/2/list_orders/3/watch_lists.xml
 
 The response to a succesful creation is the status code `201 Created`. You can get the URL of the new resource in the Location header (such that you know where to update your new resource in the future). We also include the complete XML for the final resource in the response. This is because you can usually get away with creating a new resource with less than all its regular attributes. Especially attributes like `created_at` can be helpful to get back from the creation.
 
 Updating resources is done through the PUT verb and against the URL of the resource you want to update. Here's a few examples:
 
     curl -u 605b32dd:X -X PUT -H 'Content-Type: application/xml' \
-    -d '<kase><name>Really important matters</name></kase>' https://customers.movingleads.com/kases/5.xml
+    -d '<kase><name>Really important matters</name></kase>' https://customers.movingleads.com/customer_accounts/4/list_orders/5.xml
 
     curl -u 605b32dd:X -X PUT -H 'Content-Type: application/xml' \
-    -d @note.xml https://customers.movingleads.com/notes/27.xml
+    -d @note.xml https://customers.movingleads.com/customer_accounts/2/list_orders/3/watch_lists/27.xml
 
 The response to a successful update is "200 OK".  Finally, you can delete resources (if you're allowed to) using the DELETE verb. A few examples of that:
 
-    curl -u 605b32dd:X -X DELETE https://customers.movingleads.com/kases/5.xml
+    curl -u 605b32dd:X -X DELETE https://customers.movingleads.com/customer_accounts/4/list_orders/5.xml
 
-    curl -u 605b32dd:X -X DELETE https://customers.movingleads.com/notes/27.xml
+    curl -u 605b32dd:X -X DELETE https://customers.movingleads.com/customer_accounts/2/list_orders/3/watch_lists/27.xml
 
 Note that you don't need to pass the content-type header because you're not sending any XML. The response to a successful delete is `200 OK`.
 
@@ -100,7 +100,7 @@ If SSL is enabled for your account, ensure that you're using https. If it's not,
 Alternative formats
 -------------------
 
-We support XML and JSON formats. Replace '.xml' with ',json' if you would like JSON responses.
+We support XML and JSON formats. Replace '.xml' with '.json' if you would like JSON responses.
 
 
 Conventions in the API documentation
