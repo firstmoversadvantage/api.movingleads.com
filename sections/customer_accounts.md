@@ -67,6 +67,7 @@ This endpoint includes:
   <telephone_fax>Billing Address Fax Number</telephone_fax>
   <web_address>Your Website</web_address>
   <purchase_order>Purchase Order</purchase_order>
+  <platform>Your Software Platform</platform>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
 </customer_account>
@@ -131,6 +132,7 @@ As always, the URL for the newly-created customer_account is passed back in the 
   <telephone_fax>Billing Address Fax Number</telephone_fax>
   <web_address>Your Website</web_address>
   <purchase_order>Purchase Order</purchase_order>
+  <platform>Your Software Platform</platform>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
 </customer_account>
@@ -184,6 +186,7 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
   <telephone_fax>Billing Address Fax Number</telephone_fax>
   <web_address>Your Website</web_address>
   <purchase_order>Purchase Order</purchase_order>
+  <platform>Your Software Platform</platform>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
 </customer_account>
