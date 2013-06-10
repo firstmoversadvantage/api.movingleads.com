@@ -20,7 +20,7 @@ WatchList
 Get watch_list
 -----------
 
-* `GET /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{watch_list-id}.xml` returns info about the specified watchlist.
+* `GET /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/:id.xml` returns info about the specified watchlist.
 
 This endpoint includes:
 
@@ -52,11 +52,11 @@ This endpoint includes:
   <state>CO</state>
   <zip_9> 80303-4444</zip_9>
   <dpbc>DPBC</dpbc>
-  <unit_type> unit type</unit_type>
-  <unit_number> unit number</unit_number>
-  <your_account> account</your_account>
-  <filter_before> filter before</filter_before>
-  <sold_on> sold on date</sold_on>
+  <unit_type>unit type</unit_type>
+  <unit_number>unit number</unit_number>
+  <your_account>account</your_account>
+  <filter_before>filter before</filter_before>
+  <sold_on>sold on date</sold_on>
   <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
   <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
 </watch_list>
@@ -122,7 +122,7 @@ As always, the URL for the newly-created watch_list is passed back in the `Locat
 Update watch_list
 --------------
 
-* `PUT /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{watch_list-id}.xml` updates an existing watch_list with new details from the submitted XML.
+* `PUT /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/:id.xml` updates an existing watch_list with new details from the submitted XML.
 
 Use `?reload=true` to get XML of the successfully updated watch_list.
 
@@ -154,7 +154,7 @@ Use `?reload=true` to get XML of the successfully updated watch_list.
 Destroy watch_list
 ---------------
 
-* `DELETE /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{watch_list-id}.xml` destroys the watch_list at the referenced URL.
+* `DELETE /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/:id.xml` destroys the watch_list at the referenced URL.
 
 **Response:**
 

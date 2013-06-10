@@ -16,7 +16,7 @@ API Endpoints
 Authentication
 --------------
 
-When you're using the API, it's always through an existing user in Moving Leads. There's no special API user. So when you use the API as "david", you get to see and work with what "david" is allowed to. Authenticating is done with an authentication token, which you'll find on the "My Info" screen in Moving Leads (click the "Reveal authentication token for feeds/API" link).
+When you're using the API, it's always through an existing user in Moving Leads. There's no special API user. So when you use the API as "john doe", you get to see and work with what "john doe" is allowed to. Authenticating is done with an authentication token, which you'll find on the "My Info" screen in Moving Leads (click the "Reveal authentication token for feeds/API" link).
 
 When using the authentication token, you don't need a separate password. But since Moving Leads uses [HTTP Basic Authentication](http://www.ietf.org/rfc/rfc2617.txt), and lots of implementations assume that you want to have a password, it's often easier just to pass in a dummy password, like X.
 
@@ -100,9 +100,7 @@ If SSL is enabled for your account, ensure that you're using https. If it's not,
 Alternative formats
 -------------------
 
-XML is not the only other language than HTML you can make Moving Leads speak. We're also fairly fluent in Atom, CSV, and vCards. To subscribe to recordings (notes, emails, and comments), it's often easier to use the Atom feeds than to go through the XML API. Try browsing around Moving Leads to find the recording feeds. They're linked up with link-tags in the head of the HTML. For example, there's `/recordings.atom` for the getting the 25 most recent recordings across all subjects (people, companies, and cases). And there's `/people/1/recordings.atom` for getting just the last 25 about the person with ID = 1.
-
-All parties (people and companies) can be retrieved in vCard form too. Just append the .vcf extension to the URL, like `/people/4.vcf`.
+We support XML and JSON formats. Replace '.xml' with ',json' if you would like JSON responses.
 
 
 Conventions in the API documentation

@@ -55,7 +55,7 @@ This endpoint includes:
   <telephone_2>Your Secondary Phone Number</telephone_2>
   <industry>Your Industry</industry>
   <brand_affiliation>Your Brand Affiliation</brand_affiliation>
-  <user_agreement_signed_on> Date You Signed User Agreement</user_agreement_signed_on>
+  <user_agreement_signed_on>Date You Signed User Agreement</user_agreement_signed_on>
   <accounting_id>Your ID for our Accounting System</accounting_id>
   <billing_first_name>John</billing_first_name>
   <billing_last_name>Doe</billing_last_name>
