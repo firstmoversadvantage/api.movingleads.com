@@ -40,7 +40,7 @@ This endpoint includes:
 * min_price
 * order_by
 * record_limit
-
+* list_type_id (1 = Pre-Mover Mailing List, 3 = Pre-Mover Turnkey Marketing, 28 = Clairvoyance Retention with Postcards)
 
 
 **Response:**

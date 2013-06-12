@@ -5,13 +5,12 @@ The Moving Leads API is implemented as vanilla XML over HTTP using all four verb
 
 You can explore the view part of the API (everything that's fetched with GET) through a regular browser. Using Firefox for this is particularly nice as it has a good, simple XML renderer (unlike Safari which just strips the tags and dumps the content). Pretty much any URL in Moving Leads can be viewed in its XML form by adding the .xml extension. So `/customer_accounts/4` becomes `/customer_accounts/4.xml` if you want to see the XML version.
 
-
 API Endpoints
 -------------
-* [Users](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/users.md)
-* [CustomerAccounts](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/customer_accounts.md)
-* [ListOrders](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/list_orders.md)
-* [WatchLists](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/watch_lists.md)
+* [Users](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/users.md) represent a user of our system. Each user can be associated with multiple CustomerAccounts.
+* [CustomerAccounts](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/customer_accounts.md) are created for billing purposes and to manage related ListOrders. We will issue one invoice per CustomerAccount. If you want separate invoice for different cost centers, you can create a CustomerAccount for each cost center. A CustomerAccount can have multiple ListOrders.
+* [ListOrders](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/list_orders.md) represent a standing order to purchase leads, turnkey postcard services, or customer retention services.
+* [WatchLists](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/watch_lists.md) are used for our Clairvoyance customer retention service. The WatchList contains a list of customer-supplied names and addresses for customer retention monitoring. Each WatchList record is related to a specific ListOrder.
 
 Authentication
 --------------
