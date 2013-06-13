@@ -36,7 +36,7 @@ This endpoint includes:
 * purchase order
 
 
-**Response:**
+**XML Response:**
 
 ``` xml
 <customer_account>
@@ -74,12 +74,52 @@ This endpoint includes:
 ```
 
 
+**JSON Response:**
+
+``` json
+{
+  "customer_account":
+  {
+    "id":1,
+    "company_name":"Your Company",
+    "first_name":"John",
+    "last_name":"Doe",
+    "salutation":"Mr",
+    "contact_title":"CEO",
+    "street_address":"Your Address",
+    "city":"Your City",
+    "state":"Your State",
+    "zip":"Your ZIP Code",
+    "country":"Your ZIP Code",
+    "telephone_1":"Your Primary Phone Number",
+    "telephone_2":"Your Secondary Phone Number",
+    "industry":"Your Industry",
+    "brand_affiliation":"Your Brand Affiliation",
+    "user_agreement_signed_on":"Date You Signed User Agreement",
+    "accounting_id":"Your ID for our Accounting System",
+    "billing_first_name":"John",
+    "billing_last_name":"Doe",
+    "billing_street_address":"Billing Street Address",
+    "billing_city":"Billing City",
+    "billing_state":"Billing State",
+    "billing_zip":"Billing ZIP Code",
+    "billing_country":"Billing Country",
+    "telephone_fax":"Billing Address Fax Number",
+    "web_address":"Your Website",
+    "purchase_order":"Purchase Order",
+    "platform":"Your Software Platform",
+    "created_at":"2007-01-12T15:00:00Z",
+    "updated_at":"2007-01-12T15:00:00Z"
+  }
+}
+```
+
 Get customer_accounts
 -------------
 
 * `GET /customer_accounts.xml` returns a collection of customer_accounts that are visible to the authenticated user.
 
-**Response:**
+**XML Response:**
 
 ``` xml
 <customer_accounts>
@@ -92,6 +132,14 @@ Get customer_accounts
 </customer_accounts>
 ```
 
+**JSON Response:**
+
+``` json
+{
+  'customer_accounts':
+    {'customer_account':'...'}
+    {'customer_account':'...'}
+}
 
 Create customer_account
 --------------
@@ -102,7 +150,7 @@ The XML for the new customer_account is returned on a successful request with th
 
 As always, the URL for the newly-created customer_account is passed back in the `Location` header.
 
-**Request:**
+**XML Request:**
 
 ``` xml
 <customer_account>
@@ -138,7 +186,7 @@ As always, the URL for the newly-created customer_account is passed back in the 
 </customer_account>
 ```
 
-**Response:**
+**XML Response:**
 
     Status: 201 Created
     Location: https://example.firstmoversadvantage.com/customer_accounts/#{customer_account-id}.xml
@@ -148,6 +196,54 @@ As always, the URL for the newly-created customer_account is passed back in the 
     </customer_account>
 
 
+**JSON Request:**
+
+``` json
+{
+  "customer_account":
+  {
+    "company_name":"Your Company",
+    "first_name":"John",
+    "last_name":"Doe",
+    "salutation":"Mr",
+    "contact_title":"CEO",
+    "street_address":"Your Address",
+    "city":"Your City",
+    "state":"Your State",
+    "zip":"Your ZIP Code",
+    "country":"Your ZIP Code",
+    "telephone_1":"Your Primary Phone Number",
+    "telephone_2":"Your Secondary Phone Number",
+    "industry":"Your Industry",
+    "brand_affiliation":"Your Brand Affiliation",
+    "user_agreement_signed_on":"Date You Signed User Agreement",
+    "accounting_id":"Your ID for our Accounting System",
+    "billing_first_name":"John",
+    "billing_last_name":"Doe",
+    "billing_street_address":"Billing Street Address",
+    "billing_city":"Billing City",
+    "billing_state":"Billing State",
+    "billing_zip":"Billing ZIP Code",
+    "billing_country":"Billing Country",
+    "telephone_fax":"Billing Address Fax Number",
+    "web_address":"Your Website",
+    "purchase_order":"Purchase Order",
+    "platform":"Your Software Platform",
+    "created_at":"2007-01-12T15:00:00Z",
+    "updated_at":"2007-01-12T15:00:00Z"
+  }
+}
+
+**JSON Response:**
+
+    Status: 201 Created
+    Location: https://example.firstmoversadvantage.com/customer_accounts/#{customer_account-id}.json
+
+  {
+    'customer_account':'...'
+  }
+
+
 Update customer_account
 --------------
 
@@ -155,11 +251,10 @@ Update customer_account
 
 Use `?reload=true` to get XML of the successfully updated customer_account.
 
-**Request:**
+**XML Request:**
 
 ``` xml
 <customer_account>
-  <id type="integer">1</id>
   <company_name>Your Company</company_name>
   <first_name>John</first_name>
   <last_name>Doe</last_name>
@@ -187,12 +282,51 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
   <web_address>Your Website</web_address>
   <purchase_order>Purchase Order</purchase_order>
   <platform>Your Software Platform</platform>
-  <created-at type="datetime">2007-01-12T15:00:00Z</created-at>
-  <updated-at type="datetime">2007-01-12T15:00:00Z</updated-at>
 </customer_account>
 ```
 
-**Response:**
+**XML Response:**
+
+    Status: 200 OK
+
+
+**JSON Request:**
+
+``` json
+{
+  "customer_account":
+  {
+    "company_name":"Your Company",
+    "first_name":"John",
+    "last_name":"Doe",
+    "salutation":"Mr",
+    "contact_title":"CEO",
+    "street_address":"Your Address",
+    "city":"Your City",
+    "state":"Your State",
+    "zip":"Your ZIP Code",
+    "country":"Your ZIP Code",
+    "telephone_1":"Your Primary Phone Number",
+    "telephone_2":"Your Secondary Phone Number",
+    "industry":"Your Industry",
+    "brand_affiliation":"Your Brand Affiliation",
+    "user_agreement_signed_on":"Date You Signed User Agreement",
+    "accounting_id":"Your ID for our Accounting System",
+    "billing_first_name":"John",
+    "billing_last_name":"Doe",
+    "billing_street_address":"Billing Street Address",
+    "billing_city":"Billing City",
+    "billing_state":"Billing State",
+    "billing_zip":"Billing ZIP Code",
+    "billing_country":"Billing Country",
+    "telephone_fax":"Billing Address Fax Number",
+    "web_address":"Your Website",
+    "purchase_order":"Purchase Order",
+    "platform":"Your Software Platform"
+  }
+}
+
+**JSON Response:**
 
     Status: 200 OK
 
@@ -202,6 +336,6 @@ Destroy customer_account
 
 * `DELETE /customer_accounts/#{customer_account-id}.xml` destroys the customer_account at the referenced URL.
 
-**Response:**
+**XML/JSON Response:**
 
     Status: 200 OK
