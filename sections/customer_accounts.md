@@ -144,6 +144,7 @@ Get customer_accounts
       'customer_account':'...'
     }
 }
+```
 
 Create customer_account
 --------------
@@ -195,10 +196,11 @@ As always, the URL for the newly-created customer_account is passed back in the 
     Status: 201 Created
     Location: https://example.firstmoversadvantage.com/customer_accounts/#{customer_account-id}.xml
 
+```
     <customer_account>
       ...
     </customer_account>
-
+```
 
 **JSON Request:**
 
@@ -237,16 +239,18 @@ As always, the URL for the newly-created customer_account is passed back in the 
     "updated_at":"2007-01-12T15:00:00Z"
   }
 }
+```
 
 **JSON Response:**
 
     Status: 201 Created
     Location: https://example.firstmoversadvantage.com/customer_accounts/#{customer_account-id}.json
 
+```
   {
     'customer_account':'...'
   }
-
+```
 
 Update customer_account
 --------------
@@ -329,6 +333,7 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
     "platform":"Your Software Platform"
   }
 }
+```
 
 **JSON Response:**
 

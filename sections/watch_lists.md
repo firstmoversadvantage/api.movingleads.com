@@ -117,6 +117,8 @@ Get watch_lists
       'watch_list':'...'
     }
 }
+```
+
 Create watch_list
 --------------
 
@@ -150,9 +152,11 @@ As always, the URL for the newly-created watch_list is passed back in the `Locat
     Status: 201 Created
     Location: https://example.firstmoversadvantage.com/customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{new-watch_list-id}.xml
 
+```
     <watch_list>
       ...
     </watch_list>
+```
 
 **JSON Request:**
 
@@ -185,9 +189,11 @@ As always, the URL for the newly-created watch_list is passed back in the `Locat
     Status: 201 Created
     Location: https://example.firstmoversadvantage.com/customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{new-watch_list-id}.xml
 
+```
   {
     'watch_list':'...'
   }
+```
 
 Update watch_list
 --------------
