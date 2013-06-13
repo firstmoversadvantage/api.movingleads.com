@@ -137,8 +137,12 @@ Get customer_accounts
 ``` json
 {
   'customer_accounts':
-    {'customer_account':'...'}
-    {'customer_account':'...'}
+    {
+      'customer_account':'...'
+    }
+    {
+      'customer_account':'...'
+    }
 }
 
 Create customer_account
