@@ -40,7 +40,7 @@ This endpoint includes:
 * timestamps (created_at, updated_at)
 
 
-**Response:**
+**XML Response:**
 
 ``` xml
 <watch_list>
@@ -62,12 +62,37 @@ This endpoint includes:
 </watch_list>
 ```
 
+**JSON Response:**
+
+``` json
+{
+  "watch_list":
+  {
+    "id":"1",
+    "list_order_id":"5",
+    "full_name":" John Doe",
+    "street_address":" 123 Example St.",
+    "city":" Exampleville",
+    "state":"CO",
+    "zip_9":" 80303-4444",
+    "dpbc":"DPBC",
+    "unit_type":"unit type",
+    "unit_number":"unit number",
+    "your_account":"account",
+    "filter_before":"filter before",
+    "sold_on":"sold on date",
+    "created_at":"2007-01-12T15:00:00Z",
+    "updated_at":"2007-01-12T15:00:00Z"
+  }
+}
+```
+
 Get watch_lists
 -------------
 
 * `GET /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists.xml` returns a collection of watch_lists that are visible to the authenticated user.
 
-**Response:**
+**XML Response:**
 
 ``` xml
 <watch_lists>
@@ -80,6 +105,19 @@ Get watch_lists
 </watch_lists>
 ```
 
+**JSON Response:**
+
+``` json
+{
+  'watch_lists':
+    {
+      'watch_list':'...'
+    }
+    {
+      'watch_list':'...'
+    }
+}
+```
 
 Create watch_list
 --------------
@@ -90,7 +128,7 @@ The XML for the new watch_list is returned on a successful request with the time
 
 As always, the URL for the newly-created watch_list is passed back in the `Location` header.
 
-**Request:**
+**XML Request:**
 
 ``` xml
 <watch_list>
@@ -109,15 +147,53 @@ As always, the URL for the newly-created watch_list is passed back in the `Locat
 </watch_list>
 ```
 
-**Response:**
+**XML Response:**
 
     Status: 201 Created
     Location: https://example.firstmoversadvantage.com/customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{new-watch_list-id}.xml
 
+```
     <watch_list>
       ...
     </watch_list>
+```
 
+**JSON Request:**
+
+``` json
+{
+  "watch_list":
+  {
+    "id":"1",
+    "list_order_id":"5",
+    "full_name":" John Doe",
+    "street_address":" 123 Example St.",
+    "city":" Exampleville",
+    "state":"CO",
+    "zip_9":" 80303-4444",
+    "dpbc":"DPBC",
+    "unit_type":"unit type",
+    "unit_number":"unit number",
+    "your_account":"account",
+    "filter_before":"filter before",
+    "sold_on":"sold on date",
+    "created_at":"2007-01-12T15:00:00Z",
+    "updated_at":"2007-01-12T15:00:00Z"
+  }
+}
+```
+
+
+**JSON Response:**
+
+    Status: 201 Created
+    Location: https://example.firstmoversadvantage.com/customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/#{new-watch_list-id}.xml
+
+```
+  {
+    'watch_list':'...'
+  }
+```
 
 Update watch_list
 --------------
@@ -126,7 +202,7 @@ Update watch_list
 
 Use `?reload=true` to get XML of the successfully updated watch_list.
 
-**Request:**
+**XML Request:**
 
 ``` xml
 <watch_list>
@@ -146,16 +222,45 @@ Use `?reload=true` to get XML of the successfully updated watch_list.
 </watch_list>
 ```
 
-**Response:**
+**XML Response:**
 
     Status: 200 OK
 
+
+**JSON Request:**
+
+``` json
+{
+  "watch_list":
+  {
+    "id":"1",
+    "list_order_id":"5",
+    "full_name":" John Doe",
+    "street_address":" 123 Example St.",
+    "city":" Exampleville",
+    "state":"CO",
+    "zip_9":" 80303-4444",
+    "dpbc":"DPBC",
+    "unit_type":"unit type",
+    "unit_number":"unit number",
+    "your_account":"account",
+    "filter_before":"filter before",
+    "sold_on":"sold on date",
+    "created_at":"2007-01-12T15:00:00Z",
+    "updated_at":"2007-01-12T15:00:00Z"
+  }
+}
+```
+
+**JSON Response:**
+
+    Status: 200 OK
 
 Destroy watch_list
 ---------------
 
 * `DELETE /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/:id.xml` destroys the watch_list at the referenced URL.
 
-**Response:**
+**XML/JSON Response:**
 
     Status: 200 OK
