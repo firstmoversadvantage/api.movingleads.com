@@ -20,13 +20,12 @@ edit_customer_account_list_order GET    /customer_accounts/:customer_account_id/
                                  DELETE /shared_list_orders/:id(.:format)      shared_list_orders#destroy -->
 
 
-Get list_orders
+Get list_order
 -----------
 
-* `GET /customer_accounts/#{customer_account-id}/list_orders/#{id}` returns information about specific list order for the specified customer account.
+* `GET /api/v1/customer_accounts/#{customer_account-id}/list_orders/#{id}` returns information about the specified list order belonging to the specified customer account.
 
 This endpoint includes:
-
 
 * created_by_user_id
 * customer_account_id
@@ -46,7 +45,7 @@ This endpoint includes:
 **Response:**
 
 ``` xml
-<list_orders>
+<list_order>
   <created_by_user_id>User</created_by_user_id>	
   <customer_account_id type="integer">1</created_by_user_id>	
   <delivery_email_addresses>John@gmail.com</delivery_email_addresses>
@@ -65,39 +64,39 @@ This endpoint includes:
   <min_price>Min Price</min_price>
   <order_by>Order By</order_by>
   <record_limit>Record Limit</record_limit>
-</list_orders>
+</list_order>
 ```
 
 
 Get list_orders
 -------------
 
-* `GET /customer_accounts/#{customer_account-id}/list_orders.xml` returns a collection of list_orders that are associated with specified customer account.
+* `GET /api/v1/customer_accounts/#{customer_account-id}/list_orders.xml` returns a collection of list_orders that are associated with specified customer account.
 
 **Response:**
 
 ``` xml
 <list_orders>
-  <list_orders>
+  <list_order>
     ...
-  <list_orders>
-  <list_orders>
+  <list_order>
+  <list_order>
     ...
-  </list_orders>
+  </list_order>
 </list_orders>
 ```
 
 
-Create list_orders
+Create list_order
 --------------
 
-* `POST /customer_accounts/#{customer_account-id}/list_orders.xml` creates a new list_order for the specified customer account
+* `POST /api/v1/customer_accounts/#{customer_account-id}/list_orders.xml` creates a new list_order for the specified customer account with the details from the submitted XML.
 								
 
 **Request:**
 
 ``` xml
-<list_orders>
+<list_order>
   <created_by_user_id>User</created_by_user_id>	
   <customer_account_id type="integer">1</created_by_user_id>	
   <delivery_email_addresses>John@gmail.com</delivery_email_addresses>
@@ -116,7 +115,7 @@ Create list_orders
   <min_price>Min Price</min_price>
   <order_by>Order By</order_by>
   <record_limit>Record Limit</record_limit>
-</list_orders>
+</list_order>
 ```
 
 **Response:**
@@ -124,24 +123,21 @@ Create list_orders
 Status: 201 Created
 Location: https://example.firstmoversadvantage.com/customer_accounts/#{customer_account-id}/list_orders.xml
 
-								    <list_orders>
-								      ...
-								    </<list_orders>>
-
-
+	<list_order>
+	  ...
+	</list_order>
 
 
 Update list_orders
 --------------
 
-* `PUT /customer_accounts/#{customer_account-id}/list_orders/#{id}.xml` updates an existing list_orders with new details from the submitted XML.
-
+* `PUT /api/v1/customer_accounts/#{customer_account-id}/list_orders/#{id}.xml` updates an existing list_order with new details from the submitted XML.
 
 
 **Request:**
 
 ``` xml
-<list_orders>
+<list_order>
   <created_by_user_id>User</created_by_user_id>	
   <customer_account_id type="integer">1</created_by_user_id>	
   <delivery_email_addresses>John@gmail.com</delivery_email_addresses>
@@ -160,20 +156,20 @@ Update list_orders
   <min_price>Min Price</min_price>
   <order_by>Order By</order_by>
   <record_limit>Record Limit</record_limit>
-</list_orders>
+</list_order>
 ```
 
 
 **Response:**
 
-Status: 200 OK
+    Status: 200 OK
 
 
-Destroy list_orders
+Destroy list_order
 ---------------
 
-* `DELETE /customer_accounts/#{customer_account-id}/list_orders/#{id}.xml` destroys the list_orders at the referenced URL.
+* `DELETE /api/v1/customer_accounts/#{customer_account-id}/list_orders/#{id}.xml` destroys the list_orders at the referenced URL.
 
 **Response:**
 
-Status: 200 OK
+    Status: 200 OK
