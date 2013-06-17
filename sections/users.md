@@ -70,5 +70,20 @@ The response message will indicate that the user was successfully created.
     Status: 201 Created
 
 ``` xml
-  <message>You have signed up successfully. However, we could not sign you in because your account is unconfirmed.</message>
+<message>You have signed up successfully. However, we could not sign you in because your account is unconfirmed.</message>
+```
+
+Delete the authenticated User
+----------
+
+* `DELETE /users.xml` deletes the authenticated new user.
+
+The response message will indicate that the user was successfully cancelled.
+
+**XML Response:**
+
+    Status: 200 OK
+
+``` xml
+<message>Bye! Your account was successfully cancelled. We hope to see you again soon.</message>
 ```
