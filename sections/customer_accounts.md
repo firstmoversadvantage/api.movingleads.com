@@ -342,7 +342,7 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
 Sign User Agreement
 --------------
 
-Signing user agreement is a special case of [[Update customer_account]]
+Signing user agreement is a special case of [Update customer_account](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/customer_accounts.md#update-customer_account)
 * `PUT /customer_accounts/#{id}.xml` with `"i_agree"=>"1"` will sign the user agreement for that customer account.
 
 **XML/JSON Response:**
