@@ -50,9 +50,9 @@ Create a User
 
 * `POST /users.xml` creates a new user.
 
-The response message will indicate that the user was successfully created and 
+The response message will indicate that the user was successfully created.
 
-** XML Request: **
+**XML Request:**
 
 ``` xml
 <user>
@@ -65,7 +65,7 @@ The response message will indicate that the user was successfully created and
 </user>
 ```
 
-** XML Response: **
+**XML Response:**
 
     Status: 201 Created
 
