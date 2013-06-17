@@ -15,7 +15,7 @@ CustomerAccounts
 Get customer_account
 -----------
 
-* `GET /customer_accounts/#{customer_account-id}.xml` returns info about the specified customer account.
+* `GET /api/v1/customer_accounts/#{customer_account-id}.xml` returns info about the specified customer account.
 
 This endpoint includes:
 
@@ -117,7 +117,7 @@ This endpoint includes:
 Get customer_accounts
 -------------
 
-* `GET /customer_accounts.xml` returns a collection of customer_accounts that are visible to the authenticated user.
+* `GET /api/v1/customer_accounts.xml` returns a collection of customer_accounts that are visible to the authenticated user.
 
 **XML Response:**
 
@@ -149,7 +149,7 @@ Get customer_accounts
 Create customer_account
 --------------
 
-* `POST /customer_accounts.xml` creates a new customer_account with the currently authenticated user as the author.
+* `POST /api/v1/customer_accounts.xml` creates a new customer_account with the currently authenticated user as the author.
 
 The XML for the new customer_account is returned on a successful request with the timestamps recorded and ids for the contact data associated.
 
@@ -255,7 +255,7 @@ As always, the URL for the newly-created customer_account is passed back in the 
 Update customer_account
 --------------
 
-* `PUT /customer_accounts/#{id}.xml` updates an existing customer_account with new details from the submitted XML.
+* `PUT /api/v1/customer_accounts/#{id}.xml` updates an existing customer_account with new details from the submitted XML.
 
 Use `?reload=true` to get XML of the successfully updated customer_account.
 
@@ -343,7 +343,7 @@ Sign User Agreement
 --------------
 
 Signing user agreement is a special case of [Update customer_account](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/customer_accounts.md#update-customer_account)
-* `PUT /customer_accounts/#{id}.xml` with `"i_agree"=>"1"` will sign the user agreement for that customer account.
+* `PUT /api/v1/customer_accounts/#{id}.xml` with `"i_agree"=>"1"` will sign the user agreement for that customer account.
 
 **XML/JSON Response:**
 
@@ -353,7 +353,7 @@ Signing user agreement is a special case of [Update customer_account](https://gi
 Destroy customer_account
 ---------------
 
-* `DELETE /customer_accounts/#{customer_account-id}.xml` destroys the customer_account at the referenced URL.
+* `DELETE /api/v1/customer_accounts/#{customer_account-id}.xml` destroys the customer_account at the referenced URL.
 
 **XML/JSON Response:**
 
