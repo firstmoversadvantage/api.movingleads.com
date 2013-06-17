@@ -45,4 +45,30 @@ This endpoint may be requested using a username and password, rather than the AP
 </user>
 ```
 
+Create a User
+----------
 
+* `POST /users.xml` creates a new user.
+
+The response message will indicate that the user was successfully created and 
+
+** XML Request: **
+
+``` xml
+<user>
+  <email>John.Doe@test.com</email>
+  <first_name>John</first_name>
+  <last_name>Doe</last_name>
+  <organization>Your Company</organization>
+  <password>password</password>
+  <password_confirmation>password</password_confirmation>
+</user>
+```
+
+** XML Response: **
+
+    Status: 201 Created
+
+``` xml
+  <message>You have signed up successfully. However, we could not sign you in because your account is unconfirmed.</message>
+```
