@@ -128,7 +128,7 @@ Location: https://example.firstmoversadvantage.com/customer_accounts/#{customer_
 	</list_order>
 
 
-Update list_orders
+Update list_order
 --------------
 
 * `PUT /api/v1/customer_accounts/#{customer_account-id}/list_orders/#{id}.xml` updates an existing list_order with new details from the submitted XML.
