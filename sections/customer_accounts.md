@@ -151,7 +151,7 @@ Create customer_account
 
 * `POST /api/v1/customer_accounts.xml` creates a new customer_account with the currently authenticated user as the author.
 
-The XML for the new customer_account is returned on a successful request with the timestamps recorded and ids for the contact data associated.
+The XML for the new customer_account is returned on a successful request with the timestamps recorded and ids for the contact data associated. The 'company_name' attribute will be set by the 'organization' attribute of the user submitting the request.
 
 As always, the URL for the newly-created customer_account is passed back in the `Location` header.
 
@@ -159,7 +159,6 @@ As always, the URL for the newly-created customer_account is passed back in the 
 
 ``` xml
 <customer_account>
-  <company_name>Your Company</company_name>
   <first_name>John</first_name>
   <last_name>Doe</last_name>
   <salutation>Mr</salutation>
@@ -208,7 +207,6 @@ As always, the URL for the newly-created customer_account is passed back in the 
 {
   "customer_account":
   {
-    "company_name":"Your Company",
     "first_name":"John",
     "last_name":"Doe",
     "salutation":"Mr",
@@ -263,7 +261,6 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
 
 ``` xml
 <customer_account>
-  <company_name>Your Company</company_name>
   <first_name>John</first_name>
   <last_name>Doe</last_name>
   <salutation>Mr</salutation>
@@ -304,7 +301,6 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
 {
   "customer_account":
   {
-    "company_name":"Your Company",
     "first_name":"John",
     "last_name":"Doe",
     "salutation":"Mr",
