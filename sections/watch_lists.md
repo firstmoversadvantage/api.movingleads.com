@@ -20,7 +20,7 @@ WatchList
 Get watch_list
 -----------
 
-* `GET /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/:id.xml` returns info about the specified watchlist.
+* `GET /api/v1/customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/:id.xml` returns info about the specified watchlist.
 
 This endpoint includes:
 
@@ -90,7 +90,7 @@ This endpoint includes:
 Get watch_lists
 -------------
 
-* `GET /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists.xml` returns a collection of watch_lists that are visible to the authenticated user.
+* `GET /api/v1/customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists.xml` returns a collection of watch_lists that are visible to the authenticated user.
 
 **XML Response:**
 
@@ -122,7 +122,7 @@ Get watch_lists
 Create watch_list
 --------------
 
-* `POST /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists.xml` creates a new watch_list with the currently authenticated user as the author.
+* `POST /api/v1/customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists.xml` creates a new watch_list with the currently authenticated user as the author.
 
 The XML for the new watch_list is returned on a successful request with the timestamps recorded and ids for the contact data associated.
 
@@ -198,7 +198,7 @@ As always, the URL for the newly-created watch_list is passed back in the `Locat
 Update watch_list
 --------------
 
-* `PUT /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/:id.xml` updates an existing watch_list with new details from the submitted XML.
+* `PUT /api/v1/customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/:id.xml` updates an existing watch_list with new details from the submitted XML.
 
 Use `?reload=true` to get XML of the successfully updated watch_list.
 
@@ -259,7 +259,7 @@ Use `?reload=true` to get XML of the successfully updated watch_list.
 Destroy watch_list
 ---------------
 
-* `DELETE /customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/:id.xml` destroys the watch_list at the referenced URL.
+* `DELETE /api/v1/customer_accounts/:customer_account_id/list_orders/:list_order_id/watch_lists/:id.xml` destroys the watch_list at the referenced URL.
 
 **XML/JSON Response:**
 
