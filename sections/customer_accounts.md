@@ -339,6 +339,16 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
 
     Status: 200 OK
 
+Sign User Agreement
+--------------
+
+Signing user agreement is a special case of [[Update customer_account]]
+* `PUT /customer_accounts/#{id}.xml` with `"i_agree"=>"1"` will sign the user agreement for that customer account.
+
+**XML/JSON Response:**
+
+    Status: 200 OK
+    
 
 Destroy customer_account
 ---------------
