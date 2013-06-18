@@ -339,6 +339,33 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
 
     Status: 200 OK
 
+Get User Agreement
+--------------
+
+* `GET /api/v1/customer_accounts/#{id}/user_agreement` returns the full text of the user agreement for the specified customer account.
+
+**XML Response:**
+
+    Status: 200 OK
+
+``` xml
+<user_agreement>
+  <text>
+    ...
+  </text>
+</user_agreement>
+```
+
+**JSON Response:**
+
+    Status: 200 OK
+
+``` json
+{
+  "text":"..."
+}
+```
+
 Sign User Agreement
 --------------
 
