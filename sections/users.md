@@ -70,7 +70,44 @@ The response message will indicate that the user was successfully created.
     Status: 201 Created
 
 ``` xml
-<message>You have signed up successfully. However, we could not sign you in because your account is unconfirmed.</message>
+<user>
+  <email>John.Doe@test.com</email>
+  <first_name>John</first_name>
+  <last_name>Doe</last_name>
+  <organization>Your Company</organization>
+</user>
+```
+
+**JSON Request:**
+
+``` json
+{
+  "user":
+  {
+    "email":"John.Doe@test.com",
+    "first_name":"John",
+    "last_name":"Doe",
+    "organization":"Your Company",
+    "password":"password",
+    "password_confirmation":"password"
+  }
+}
+```
+
+**JSON Response:**
+
+    Status: 201 Created
+
+``` json
+{
+  "user":
+  {
+    "email":"John.Doe@test.com",
+    "first_name":"John",
+    "last_name":"Doe",
+    "organization":"Your Company",
+  }
+}
 ```
 
 Delete the authenticated User
@@ -84,6 +121,3 @@ The response message will indicate that the user was successfully cancelled.
 
     Status: 200 OK
 
-``` xml
-<message>Bye! Your account was successfully cancelled. We hope to see you again soon.</message>
-```
