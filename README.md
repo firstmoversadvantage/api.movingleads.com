@@ -3,7 +3,7 @@ Moving Leads API
 
 The [Moving Leads](http://www.movingleads.com/) API is implemented as vanilla JSON or XML over HTTP using all four verbs (GET/POST/PUT/DELETE). Every resource, like User, CustomerAccount, or ListOrder, has their own URL and are manipulated in isolation. In other words, we've tried to make the API follow the REST principles as much as we can.
 
-You can explore the view part of the API (everything that's fetched with GET) through a regular browser. Using Firefox for this is particularly nice as it has a good, simple XML renderer (unlike Safari which just strips the tags and dumps the content). The API is versioned where the version number is in the request path. For example: `/api/v1/customer_accounts.xml` for XML or `/api/v1/customer_accounts.xml` for the JSON version.
+You can explore the view part of the API (everything that's fetched with GET) through a regular browser. Using Firefox for this is particularly nice as it has a good, simple XML renderer (unlike Safari which just strips the tags and dumps the content). The API is versioned where the version number is in the request path. For example: `/api/v1/customer_accounts.xml` for XML or `/api/v1/customer_accounts.json` for JSON.
 
 API Endpoints
 -------------
@@ -15,7 +15,7 @@ API Endpoints
 Authentication
 --------------
 
-When you're using the API, it's always through an existing User. There's no special API user. So when you use the API as "John Doe", you get to see and work with what "John Doe" is allowed to. Authenticating is done with an authentication token, which you'll find on the User Profile screen in [customers.movingleads.com](http://customers.movingleads.com).
+When you're using the API, it's always through an existing User. There's no special API user. So when you use the API as "John Doe", you get to see and work with what "John Doe" is allowed to see and do. Authenticating is done with an authentication token, which you'll find on the User Profile screen in [customers.movingleads.com](http://customers.movingleads.com).
 
 When using the authentication token, you don't need a separate password. But since Moving Leads uses [HTTP Basic Authentication](http://www.ietf.org/rfc/rfc2617.txt), and lots of implementations assume that you want to have a password, it's often easier just to pass in a dummy password, like X.
 
@@ -44,34 +44,35 @@ Writing through the API
 
 Creating, updating, and deleting resources through the API is almost as easy as reading, but you can't explore it as easily through the browser. Regardless of your implementation language, though, using curl to play first is a great idea. It makes it very easy to explore the API and is perfect for small scripts too.
 
-When you're creating and updating resources, you'll be sending JSON or XML into Moving Leads. You need to let the system know that fact by adding the header `Content-type: application/xml`, so we know that it's not regular form-encoded data coming in. Then you just include the XML of the resource in the body of your request.
+When you're creating and updating resources, you'll be sending JSON or XML into Moving Leads. You need to let the system know that fact by adding the header `Content-type: application/xml` or `Content-type: application/json`, so we know that it's not regular form-encoded data coming in. Then you just include the XML or JSON of the resource in the body of your request.
 
 Here's a few examples creating new resources, first with the XML inline, second referencing the XML from a file:
 
     curl -u 605b32dd:X -H 'Content-Type: application/xml' \
-    -d '<kase><name>Important matters</name></kase>' https://customers.movingleads.com/api/v1/customer_accounts/4/list_orders.xml
+    -d '<customer_account><company_name>Important matters</company_name></customer_account>' https://customers.movingleads.com/api/v1/customer_accounts/4.xml
 
     curl -u 605b32dd:X -H 'Content-Type: application/xml' \
-    -d @note.xml https://customers.movingleads.com/api/v1/customer_accounts/5/customer_accounts/2/list_orders/3/watch_lists.xml
+    -d @note.xml https://customers.movingleads.com/api/v1/customer_accounts/5/customer_accounts/2.xml
 
-The response to a succesful creation is the status code `201 Created`. You can get the URL of the new resource in the Location header (such that you know where to update your new resource in the future). We also include the complete XML for the final resource in the response. This is because you can usually get away with creating a new resource with less than all its regular attributes. Especially attributes like `created_at` can be helpful to get back from the creation.
+The response to a successful creation is the status code `201 Created`. You can get the URL of the new resource in the Location header (such that you know where to update your new resource in the future). We also include the complete XML for the final resource in the response. This is because you can usually get away with creating a new resource with less than all its regular attributes. Especially attributes like `created_at` can be helpful to get back from the creation.
 
 Updating resources is done through the PUT verb and against the URL of the resource you want to update. Here's a few examples:
 
     curl -u 605b32dd:X -X PUT -H 'Content-Type: application/xml' \
-    -d '<kase><name>Really important matters</name></kase>' https://customers.movingleads.com/api/v1/customer_accounts/4/list_orders/5.xml
+    -d '<customer_account><company_name>Doe Company, LLC</company_name></customer_account>' https://customers.movingleads.com/api/v1/customer_accounts/4.xml
 
     curl -u 605b32dd:X -X PUT -H 'Content-Type: application/xml' \
-    -d @note.xml https://customers.movingleads.com/api/v1/customer_accounts/2/list_orders/3/watch_lists/27.xml
+    -d @note.xml https://customers.movingleads.com/api/v1/customer_accounts/2.xml
 
 The response to a successful update is "200 OK".  Finally, you can delete resources (if you're allowed to) using the DELETE verb. A few examples of that:
 
-    curl -u 605b32dd:X -X DELETE https://customers.movingleads.com/api/v1/customer_accounts/4/list_orders/5.xml
+    curl -u 605b32dd:X -X DELETE https://customers.movingleads.com/api/v1/customer_accounts/4.xml
 
-    curl -u 605b32dd:X -X DELETE https://customers.movingleads.com/api/v1/customer_accounts/2/list_orders/3/watch_lists/27.xml
+    curl -u 605b32dd:X -X DELETE https://customers.movingleads.com/api/v1/customer_accounts/2.xml
+
+NOTE: delete will be a no-op for most users. If you would like to deactivate an account, use the edit feature instead.
 
 Note that you don't need to pass the content-type header because you're not sending any XML. The response to a successful delete is `200 OK`.
-
 
 Dealing with failure
 --------------------
@@ -88,7 +89,6 @@ Alternative formats
 -------------------
 
 We support XML and JSON formats. Replace '.xml' with '.json' if you would like JSON responses.
-
 
 Conventions in the API documentation
 ------------------------------------
