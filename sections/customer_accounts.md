@@ -366,7 +366,27 @@ Sign User Agreement
 --------------
 
 Signing user agreement is a special case of [Update customer_account](https://github.com/firstmoversadvantage/api.movingleads.com/blob/master/sections/customer_accounts.md#update-customer_account)
-* `PUT /api/v1/customer_accounts/#{id}.xml` with `"i_agree"=>"1"` will sign the user agreement for that customer account.
+* `PUT /api/v1/customer_accounts/#{id}.xml` with a customer account object with attribute `"i_agree" = 1` will sign the user agreement for that customer account.
+
+**XML Request:**
+
+``` xml
+<customer_account>
+  <i_agree>
+    1
+  </i_agree>
+</customer_account>
+```
+
+**JSON Request:**
+
+``` json
+{
+  "customer_account":
+    {
+      "i_agree":1
+    }
+}
 
 **XML/JSON Response:**
 
