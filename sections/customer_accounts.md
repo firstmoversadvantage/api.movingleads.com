@@ -151,7 +151,7 @@ Create customer_account
 
 * `POST /api/v1/customer_accounts.xml` creates a new customer_account with the currently authenticated user as the author.
 
-The XML for the new customer_account is returned on a successful request with the timestamps recorded and ids for the contact data associated.
+The XML for the new customer_account is returned on a successful request with the timestamps recorded and ids for the contact data associated. The 'company_name' attribute will be set by the 'organization' attribute of the user submitting the request if it is not set in the request itself.
 
 As always, the URL for the newly-created customer_account is passed back in the `Location` header.
 
