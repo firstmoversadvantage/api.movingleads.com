@@ -1,6 +1,25 @@
+Moving Leads by First Movers Advantage, LLC
+===========================================
+First Movers Advantage, LLC provides sales leads and customer retention services to the moving and storage industry in the USA. This API is intended for use by software providers in the industry to integrate customer acquisition and customer retention features into their software offerings.
+
+Example Use
+===========
+Anne works for a moving company and wishes to purchase a direct mail list for her customer acquisition campaign. She will start at [customers.movingleads.com](http://customers.movingleads.com) and create a new User account. Our system will send Anne an email asking her to confirm her email address and activate the User account.
+
+After, the User account is activated, Anne will create a CustomerAccount for billing purposes. If Anne has more that one location, she can create a separate CustomerAccount for each location. We will send one Invoice for each CustomerAccount, so Anne can keep track of expenses by location or cost center.
+
+After creating each CustomerAccount, Anne will be asked to review and sign our UserAgreement. To sign the agreement, she will check a box to say 'I Agree' and press a submit button.
+
+After signing the User Agreement, Anne can create one or more ListOrders for service (per CustomerAccount). Our system will automatically create one default ListOrder for our pre-movers mailing list. The new ListOrder is inactive by default and Anne will be prompted to call us to review her list selection criteria, provide credit card information, and begin service.
+
+While Anne's service is active, we will send a weekly mailing list by email on Monday mornings. The email will include a PDF attachment that has been pre-formatted for mailing labels. She will also receive the same list in XLS format for use in a mail merge with a word processor.
+
+Anne will also receive a weekly email with her invoice attached (one per CustomerAccount).
+
+Please contact us at (303) 443-0767 with questions about our service.
+
 Moving Leads API
 ================
-
 The [Moving Leads](http://www.movingleads.com/) API is implemented as vanilla JSON or XML over HTTP using all four verbs (GET/POST/PUT/DELETE). Every resource, like User, CustomerAccount, or ListOrder, has their own URL and are manipulated in isolation. In other words, we've tried to make the API follow the REST principles as much as we can.
 
 You can explore the view part of the API (everything that's fetched with GET) through a regular browser. Using Firefox for this is particularly nice as it has a good, simple XML renderer (unlike Safari which just strips the tags and dumps the content). The API is versioned where the version number is in the request path. For example: `/api/v1/customer_accounts.xml` for XML or `/api/v1/customer_accounts.json` for JSON.
