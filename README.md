@@ -2,8 +2,8 @@ Moving Leads by First Movers Advantage, LLC
 ===========================================
 First Movers Advantage, LLC provides sales leads and customer retention services to the moving and storage industry in the USA. This API is intended for use by software providers in the industry to integrate customer acquisition and customer retention features into their software offerings.
 
-Example Use
-===========
+Example Customer Story
+======================
 Anne works for a moving company and wishes to purchase a direct mail list for her customer acquisition campaign. She will start at [customers.movingleads.com](http://customers.movingleads.com) and create a new User account. Our system will send Anne an email asking her to confirm her email address and activate the User account.
 
 After, the User account is activated, Anne will create a CustomerAccount for billing purposes. If Anne has more that one location, she can create a separate CustomerAccount for each location. We will send one Invoice for each CustomerAccount, so Anne can keep track of expenses by location or cost center.
