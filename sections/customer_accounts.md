@@ -159,7 +159,6 @@ As always, the URL for the newly-created customer_account is passed back in the 
 
 ``` xml
 <customer_account>
-  <company_name>Your Company</company_name>
   <first_name>John</first_name>
   <last_name>Doe</last_name>
   <salutation>Mr</salutation>
@@ -208,7 +207,6 @@ As always, the URL for the newly-created customer_account is passed back in the 
 {
   "customer_account":
   {
-    "company_name":"Your Company",
     "first_name":"John",
     "last_name":"Doe",
     "salutation":"Mr",
@@ -263,7 +261,6 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
 
 ``` xml
 <customer_account>
-  <company_name>Your Company</company_name>
   <first_name>John</first_name>
   <last_name>Doe</last_name>
   <salutation>Mr</salutation>
@@ -304,7 +301,6 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
 {
   "customer_account":
   {
-    "company_name":"Your Company",
     "first_name":"John",
     "last_name":"Doe",
     "salutation":"Mr",
