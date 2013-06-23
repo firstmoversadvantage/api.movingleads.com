@@ -110,6 +110,37 @@ The response message will indicate that the user was successfully created.
 }
 ```
 
+Create a User
+----------
+
+* `PUT /users.xml` updates the current user.
+
+
+**XML Request:**
+
+``` xml
+<user>
+  <email>John.Doe@test.com</email>
+  <first_name>John</first_name>
+  <last_name>Doe</last_name>
+  <organization>Your Company</organization>
+</user>
+```
+
+**JSON Request:**
+
+``` json
+{
+  "user":
+  {
+    "email":"John.Doe@test.com",
+    "first_name":"John",
+    "last_name":"Doe",
+    "organization":"Your Company"
+  }
+}
+```
+
 Delete the authenticated User
 ----------
 
