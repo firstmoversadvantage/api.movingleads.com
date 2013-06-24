@@ -32,17 +32,36 @@ Get myself
 
 This endpoint may be requested using a username and password, rather than the API token. This allows applications to obtain the token from those credentials, rather than requiring their users to enter an obscure API token by hand.
 
-**Response:**
+**XML Response:**
 
 ``` xml
 <user>
   <id type="integer">1</id>
-  <name>John Doe</name>
+  <first_name>John</first_name>
+  <last_name>Doe</last_name>
   <email-address>john.doe@example.com</email-address>
-  <token>#{api_token}</token>
+  <authentication-token>#{api_token}</authentication-token>
   <created-at type="datetime">2007-04-23T20:25:29Z</created-at>
   <updated-at type="datetime">2007-04-23T20:25:29Z</updated-at>
 </user>
+```
+
+**JSON Response:**
+
+``` json
+{
+  "user":
+  {
+    "id":"1",
+    "email":"John.Doe@test.com",
+    "first_name":"John",
+    "last_name":"Doe",
+    "organization":"Your Company",
+    "authentication-token":"#{api_token}",
+    "created-at":"2007-04-23T20:25:29Z",
+    "updated-at":"2007-04-23T20:25:29Z"
+  }
+}
 ```
 
 Create a User
@@ -71,10 +90,14 @@ The response message will indicate that the user was successfully created.
 
 ``` xml
 <user>
+  <id type="integer">1</id>
   <email>John.Doe@test.com</email>
   <first_name>John</first_name>
   <last_name>Doe</last_name>
   <organization>Your Company</organization>
+  <authentication-token>#{api_token}</authentication-token>
+  <created-at type="datetime">2007-04-23T20:25:29Z</created-at>
+  <updated-at type="datetime">2007-04-23T20:25:29Z</updated-at>
 </user>
 ```
 
@@ -102,15 +125,19 @@ The response message will indicate that the user was successfully created.
 {
   "user":
   {
+    "id":"1",
     "email":"John.Doe@test.com",
     "first_name":"John",
     "last_name":"Doe",
     "organization":"Your Company",
+    "authentication-token":"#{api_token}",
+    "created-at":"2007-04-23T20:25:29Z",
+    "updated-at":"2007-04-23T20:25:29Z"
   }
 }
 ```
 
-Create a User
+Update a User
 ----------
 
 * `PUT /users.xml` updates the current user.
@@ -124,6 +151,23 @@ Create a User
   <first_name>John</first_name>
   <last_name>Doe</last_name>
   <organization>Your Company</organization>
+</user>
+```
+
+**XML Response:**
+
+    Status: 200
+
+``` xml
+<user>
+  <id type="integer">1</id>
+  <email>John.Doe@test.com</email>
+  <first_name>John</first_name>
+  <last_name>Doe</last_name>
+  <organization>Your Company</organization>
+  <authentication-token>#{api_token}</authentication-token>
+  <created-at type="datetime">2007-04-23T20:25:29Z</created-at>
+  <updated-at type="datetime">2007-04-23T20:25:29Z</updated-at>
 </user>
 ```
 
@@ -141,6 +185,26 @@ Create a User
 }
 ```
 
+**JSON Response:**
+
+    Status: 200
+
+``` json
+{
+  "user":
+  {
+    "id":"1",
+    "email":"John.Doe@test.com",
+    "first_name":"John",
+    "last_name":"Doe",
+    "organization":"Your Company",
+    "authentication-token":"#{api_token}",
+    "created-at":"2007-04-23T20:25:29Z",
+    "updated-at":"2007-04-23T20:25:29Z"
+  }
+}
+```
+
 Delete the authenticated User
 ----------
 
@@ -148,7 +212,7 @@ Delete the authenticated User
 
 The response message will indicate that the user was successfully cancelled.
 
-**XML Response:**
+**XML/JSON Response:**
 
     Status: 200 OK
 
