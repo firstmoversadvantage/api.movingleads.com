@@ -12,15 +12,15 @@ Get list_types
 <list-types type="array">
   <list-type>
     <idtype="integer">1</id>
-    <description>Pre-MoversList</description>
+    <description>Pre-Movers List</description>
   </list-type>
   <list-type>
     <idtype="integer">3</id>
-    <description>Pre-MoversTurnkeyPostcards</description>
+    <description>Pre-Movers Turnkey Postcards</description>
   </list-type>
   <list-type>
     <idtype="integer">11</id>
-    <description>Pre-MoversTelemarketing</description>
+    <description>Pre-Movers Telemarketing</description>
   </list-type>
   <list-type>
     <idtype="integer">17</id>
@@ -32,7 +32,7 @@ Get list_types
   </list-type>
   <list-type>
     <idtype="integer">28</id>
-    <description>ClairvoyancePostcards</description>
+    <description>Clairvoyance Postcards</description>
   </list-type>
 </list-types>
 ```
@@ -77,7 +77,7 @@ Get list_type
 ``` xml
 <list-type>
   <idtype="integer">1</id>
-  <description>Pre-MoversList</description>
+  <description>Pre-Movers List</description>
 </list-type>
 ```
 
