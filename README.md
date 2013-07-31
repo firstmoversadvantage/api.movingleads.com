@@ -6,7 +6,7 @@ Example Customer Story
 ======================
 Anne works for a moving company and wishes to purchase a direct mail list for her customer acquisition campaign. She will start at [customers.movingleads.com](http://customers.movingleads.com) and create a new User account. Our system will send Anne an email asking her to confirm her email address and activate the User account.
 
-After, the User account is activated, Anne will create a CustomerAccount for billing purposes. If Anne has more that one location, she can create a separate CustomerAccount for each location. We will send one Invoice for each CustomerAccount, so Anne can keep track of expenses by location or cost center.
+After the User account is activated, Anne will create a CustomerAccount for billing purposes. If Anne has more that one location, she can create a separate CustomerAccount for each location. We will send one Invoice for each CustomerAccount, so Anne can keep track of expenses by location or cost center.
 
 After creating each CustomerAccount, Anne will be asked to review and sign our UserAgreement. To sign the agreement, she will check a box to say 'I Agree' and press a submit button.
 
@@ -89,9 +89,9 @@ The response to a successful update is "200 OK".  Finally, you can delete resour
 
     curl -u 605b32dd:X -X DELETE https://customers.movingleads.com/api/v1/customer_accounts/2.xml
 
-NOTE: delete will be a no-op for most users. If you would like to deactivate an account, use the edit feature instead.
+NOTE: DELETE will be a no-op for most users. If you would like to deactivate an account, use the edit feature instead.
 
-Note that you don't need to pass the content-type header because you're not sending any XML. The response to a successful delete is `200 OK`.
+Note that you don't need to pass the content-type header because you're not sending any XML. The response to a successful DELETE is `200 OK`.
 
 Dealing with failure
 --------------------
