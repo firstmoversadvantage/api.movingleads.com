@@ -32,11 +32,11 @@ This endpoint includes:
 * state
 * 9-digit zip code
 * dpbc
-* unit type
-* unit number
-* your account
-* filter before
-* sold on date
+*unit type
+*unit number
+* youraccount
+*filter before
+*sold on date
 * timestamps (created_at, updated_at)
 
 
@@ -46,11 +46,11 @@ This endpoint includes:
 <watch_list>
   <id>1</id>
   <list_order_id>5</list_order_id>
-  <full_name> John Doe</full_name>
-  <street_address> 123 Example St.</street_address>
-  <city> Exampleville</city>
+  <full_name>John Doe</full_name>
+  <street_address>123 Example St</street_address>
+  <city>Exampleville</city>
   <state>CO</state>
-  <zip_9> 80303-4444</zip_9>
+  <zip_9>80303-4444</zip_9>
   <dpbc>DPBC</dpbc>
   <unit_type>unit type</unit_type>
   <unit_number>unit number</unit_number>
@@ -70,11 +70,11 @@ This endpoint includes:
   {
     "id":"1",
     "list_order_id":"5",
-    "full_name":" John Doe",
-    "street_address":" 123 Example St.",
-    "city":" Exampleville",
+    "full_name":"John Doe",
+    "street_address":"123 Example St",
+    "city":"Exampleville",
     "state":"CO",
-    "zip_9":" 80303-4444",
+    "zip_9":"80303-4444",
     "dpbc":"DPBC",
     "unit_type":"unit type",
     "unit_number":"unit number",
@@ -133,17 +133,17 @@ As always, the URL for the newly-created watch_list is passed back in the `Locat
 ``` xml
 <watch_list>
   <list_order_id>5</list_order_id>
-  <full_name> John Doe</full_name>
-  <street_address> 123 Example St.</street_address>
-  <city> Exampleville</city>
+  <full_name>John Doe</full_name>
+  <street_address>123 Example St</street_address>
+  <city>Exampleville</city>
   <state>CO</state>
-  <zip_9> 80303-4444</zip_9>
+  <zip_9>80303-4444</zip_9>
   <dpbc>DPBC</dpbc>
-  <unit_type> unit type</unit_type>
-  <unit_number> unit number</unit_number>
-  <your_account> account</your_account>
-  <filter_before> filter before</filter_before>
-  <sold_on> sold on date</sold_on>
+  <unit_type>unit type</unit_type>
+  <unit_number>unit number</unit_number>
+  <your_account>account</your_account>
+  <filter_before>filter before</filter_before>
+  <sold_on>sold on date</sold_on>
 </watch_list>
 ```
 
@@ -166,11 +166,11 @@ As always, the URL for the newly-created watch_list is passed back in the `Locat
   {
     "id":"1",
     "list_order_id":"5",
-    "full_name":" John Doe",
-    "street_address":" 123 Example St.",
-    "city":" Exampleville",
+    "full_name":"John Doe",
+    "street_address":"123 Example St",
+    "city":"Exampleville",
     "state":"CO",
-    "zip_9":" 80303-4444",
+    "zip_9":"80303-4444",
     "dpbc":"DPBC",
     "unit_type":"unit type",
     "unit_number":"unit number",
@@ -208,17 +208,17 @@ Use `?reload=true` to get XML of the successfully updated watch_list.
 <watch_list>
   <id>1</id>
   <list_order_id>5</list_order_id>
-  <full_name> John Doe</full_name>
-  <street_address> 123 Example St.</street_address>
-  <city> Exampleville</city>
+  <full_name>John Doe</full_name>
+  <street_address>123 Example St</street_address>
+  <city>Exampleville</city>
   <state>CO</state>
-  <zip_9> 80303-4444</zip_9>
+  <zip_9>80303-4444</zip_9>
   <dpbc>DPBC</dpbc>
-  <unit_type> unit type</unit_type>
-  <unit_number> unit number</unit_number>
-  <your_account> account</your_account>
-  <filter_before> filter before</filter_before>
-  <sold_on> sold on date</sold_on>
+  <unit_type>unit type</unit_type>
+  <unit_number>unit number</unit_number>
+  <your_account>account</your_account>
+  <filter_before>filter before</filter_before>
+  <sold_on>sold on date</sold_on>
 </watch_list>
 ```
 
@@ -235,11 +235,11 @@ Use `?reload=true` to get XML of the successfully updated watch_list.
   {
     "id":"1",
     "list_order_id":"5",
-    "full_name":" John Doe",
-    "street_address":" 123 Example St.",
-    "city":" Exampleville",
+    "full_name":"John Doe",
+    "street_address":"123 Example St",
+    "city":"Exampleville",
     "state":"CO",
-    "zip_9":" 80303-4444",
+    "zip_9":"80303-4444",
     "dpbc":"DPBC",
     "unit_type":"unit type",
     "unit_number":"unit number",
