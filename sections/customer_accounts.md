@@ -50,7 +50,7 @@ This endpoint includes:
   <city>Your City</city>
   <state>Your State</state>
   <zip>Your ZIP Code</zip>
-  <country>Your ZIP Code</country>
+  <country>Your Country</country>
   <telephone_1>Your Primary Phone Number</telephone_1>
   <telephone_2>Your Secondary Phone Number</telephone_2>
   <industry>Your Industry</industry>
@@ -90,7 +90,7 @@ This endpoint includes:
     "city":"Your City",
     "state":"Your State",
     "zip":"Your ZIP Code",
-    "country":"Your ZIP Code",
+    "country":"Your Country",
     "telephone_1":"Your Primary Phone Number",
     "telephone_2":"Your Secondary Phone Number",
     "industry":"Your Industry",
@@ -167,7 +167,7 @@ As always, the URL for the newly-created customer_account is passed back in the 
   <city>Your City</city>
   <state>Your State</state>
   <zip>Your ZIP Code</zip>
-  <country>Your ZIP Code</country>
+  <country>Your Country</country>
   <telephone_1>Your Primary Phone Number</telephone_1>
   <telephone_2>Your Secondary Phone Number</telephone_2>
   <industry>Your Industry</industry>
@@ -215,7 +215,7 @@ As always, the URL for the newly-created customer_account is passed back in the 
     "city":"Your City",
     "state":"Your State",
     "zip":"Your ZIP Code",
-    "country":"Your ZIP Code",
+    "country":"Your Country",
     "telephone_1":"Your Primary Phone Number",
     "telephone_2":"Your Secondary Phone Number",
     "industry":"Your Industry",
@@ -269,7 +269,7 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
   <city>Your City</city>
   <state>Your State</state>
   <zip>Your ZIP Code</zip>
-  <country>Your ZIP Code</country>
+  <country>Your Country</country>
   <telephone_1>Your Primary Phone Number</telephone_1>
   <telephone_2>Your Secondary Phone Number</telephone_2>
   <industry>Your Industry</industry>
@@ -309,7 +309,7 @@ Use `?reload=true` to get XML of the successfully updated customer_account.
     "city":"Your City",
     "state":"Your State",
     "zip":"Your ZIP Code",
-    "country":"Your ZIP Code",
+    "country":"Your Country",
     "telephone_1":"Your Primary Phone Number",
     "telephone_2":"Your Secondary Phone Number",
     "industry":"Your Industry",
