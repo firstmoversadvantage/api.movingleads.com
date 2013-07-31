@@ -23,7 +23,7 @@ edit_customer_account_list_order GET    /customer_accounts/:customer_account_id/
 Get list_order
 -----------
 
-* `GET /api/v1/customer_accounts/#{customer_account-id}/list_orders/#{id}` returns information about the specified list order belonging to the specified customer account.
+* `GET /api/v1/customer_accounts/#{customer_account_id}/list_orders/#{id}` returns information about the specified list order belonging to the specified customer account.
 
 This endpoint includes:
 
@@ -31,8 +31,8 @@ This endpoint includes:
 * customer_account_id
 * delivery_email_addresses, 
 * delivery_email_subject
-* geo_city,geo_state,geo_country,geo_latitude,geo_longitude,geo_radius_miles
-* geo_street_address,geo_zip
+* geo_city, geo_state, geo_country, geo_latitude, geo_longitude, geo_radius_miles
+* geo_street_address, geo_zip
 * id
 * is_active
 * max_price
@@ -49,7 +49,7 @@ This endpoint includes:
   <created_by_user_id>User</created_by_user_id>	
   <customer_account_id type="integer">1</created_by_user_id>	
   <delivery_email_addresses>John@gmail.com</delivery_email_addresses>
-  <delivery_email_subject>subject</delivery_email_subject>
+  <delivery_email_subject>Subject</delivery_email_subject>
   <geo_city>Your City</geo_city>
   <geo_state>Your State</geo_state>
   <geo_country>Your Country</geo_country>
@@ -60,7 +60,7 @@ This endpoint includes:
   <geo_zip>Your Zip</geo_zip>	
   <id type="integer">1</id>
   <is_active>Y/N</is_active>
-  <max_price>Price</max_price>
+  <max_price>Max Price</max_price>
   <min_price>Min Price</min_price>
   <order_by>Order By</order_by>
   <record_limit>Record Limit</record_limit>
@@ -100,7 +100,7 @@ Create list_order
   <created_by_user_id>User</created_by_user_id>	
   <customer_account_id type="integer">1</created_by_user_id>	
   <delivery_email_addresses>John@gmail.com</delivery_email_addresses>
-  <delivery_email_subject>subject</delivery_email_subject>
+  <delivery_email_subject>Subject</delivery_email_subject>
   <geo_city>Your City</geo_city>
   <geo_state>Your State</geo_state>
   <geo_country>Your Country</geo_country>
@@ -111,7 +111,7 @@ Create list_order
   <geo_zip>Your Zip</geo_zip>	
   <id type="integer">1</id>
   <is_active>Y/N</is_active>
-  <max_price>Price</max_price>
+  <max_price>Max Price</max_price>
   <min_price>Min Price</min_price>
   <order_by>Order By</order_by>
   <record_limit>Record Limit</record_limit>
@@ -141,7 +141,7 @@ Update list_order
   <created_by_user_id>User</created_by_user_id>	
   <customer_account_id type="integer">1</created_by_user_id>	
   <delivery_email_addresses>John@gmail.com</delivery_email_addresses>
-  <delivery_email_subject>subject</delivery_email_subject>
+  <delivery_email_subject>Subject</delivery_email_subject>
   <geo_city>Your City</geo_city>
   <geo_state>Your State</geo_state>
   <geo_country>Your Country</geo_country>
@@ -152,7 +152,7 @@ Update list_order
   <geo_zip>Your Zip</geo_zip>	
   <id type="integer">1</id>
   <is_active>Y/N</is_active>
-  <max_price>Price</max_price>
+  <max_price>Max Price</max_price>
   <min_price>Min Price</min_price>
   <order_by>Order By</order_by>
   <record_limit>Record Limit</record_limit>
